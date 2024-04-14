@@ -91,7 +91,7 @@ gulp.task("js:build", function () {
   GITHUB: https://github.com/themefisher/
   `)
     )
-    .pipe(gulp.dest(path.build.dirDev + "js/"))
+    .pipe(gulp.dest(path.build.dirDev + "/theme/js/"))
     .pipe(
       bs.reload({
         stream: true,
@@ -115,7 +115,7 @@ gulp.task("images:build", function () {
 gulp.task("plugins:build", function () {
   return gulp
     .src(path.src.plugins)
-    .pipe(gulp.dest(path.build.dirDev + "plugins/"))
+    .pipe(gulp.dest(path.build.dirDev + "/theme/plugins/"))
     .pipe(
       bs.reload({
         stream: true,
