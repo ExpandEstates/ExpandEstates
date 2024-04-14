@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="en">
   <head>
     <!-- Basic Page Needs
@@ -30,13 +23,6 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    <style>
-      .bg-red {
-        background-color: red;
-      }
-    </style>
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="js/EEscript.js"></script>
 
     <!-- CSS
   ================================================== -->
@@ -52,6 +38,10 @@
     <link rel="stylesheet" href="plugins/slick/slick.css" />
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Scripts -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="js/EEscript.js"></script>
   </head>
   <body id="body">
     <!--
@@ -76,38 +66,10 @@ Fixed Navigation
 ==================================== -->
     <div id="EEHeaders"></div>
     <script>
-      // Call the function and pass the desired header ID as a parameter
       $(function () {
         fetchAndManipulateHeaders("header1");
       });
     </script>
-    <!-- <div id="EEHeaders"></div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      function fetchAndManipulateHeader(page) {
-        $("#EEHeaders").load(
-          "header.html",
-          function (responseTxt, statusTxt, xhr) {
-            if (statusTxt == "success") {
-              // Manipulate the loaded content directly based on the 'page' parameter
-              $("#" + page).addClass("active");
-              console.log(
-                "Class added to #" + page + ":",
-                $("#" + page).attr("class")
-              );
-            } else if (statusTxt == "error") {
-              console.error(
-                "Error loading header.html:",
-                xhr.status + ": " + xhr.statusText
-              );
-            }
-          }
-        );
-      }
-      // Call the function and pass the desired header ID as a parameter
-      fetchAndManipulateHeader("header1");
-    </script> -->
-
     <!--
 End Fixed Navigation
 ==================================== -->
