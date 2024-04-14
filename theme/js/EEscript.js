@@ -22,20 +22,23 @@
   //   }
   // });
   window.fetchAndManipulateHeaders = function (page) {
-    $("#EEHeaders").load("header.html", function (responseTxt, statusTxt, xhr) {
-      if (statusTxt == "success") {
-        // Manipulate the loaded content directly based on the 'page' parameter
-        $("#" + page).addClass("active");
-        console.log(
-          "Class added to #" + page + ":",
-          $("#" + page).attr("class")
-        );
-      } else if (statusTxt == "error") {
-        console.error(
-          "Error loading header.html:",
-          xhr.status + ": " + xhr.statusText
-        );
+    $("#EEHeaders").load(
+      "/theme/header.html",
+      function (responseTxt, statusTxt, xhr) {
+        if (statusTxt == "success") {
+          // Manipulate the loaded content directly based on the 'page' parameter
+          $("#" + page).addClass("active");
+          console.log(
+            "Class added to #" + page + ":",
+            $("#" + page).attr("class")
+          );
+        } else if (statusTxt == "error") {
+          console.error(
+            "Error loading header.html:",
+            xhr.status + ": " + xhr.statusText
+          );
+        }
       }
-    });
+    );
   };
 })(jQuery);
