@@ -7,9 +7,14 @@
 
 (function ($) {
   "use strict";
-
   $(function () {
-    $("#footer").load("footer.html");
+    $("#EEcall-to-action").load("/theme/templates/EEcall-to-action.html");
+  });
+  $(function () {
+    $("#EEwidget-sidebar").load("/theme/templates/EEwidget-sidebar.html");
+  });
+  $(function () {
+    $("#footer").load("/theme/templates/footer.html");
   });
 
   // $("#EEHeader").load("header.html", function(responseTxt, statusTxt, xhr) {
@@ -21,9 +26,31 @@
   //     console.error("Error loading header.html:", xhr.status + ": " + xhr.statusText);
   //   }
   // });
+
+  window.fetchAndManipulateHeaders = function (pageHeader, pageTitle) {
+    $("#EEpage-header").load(
+      "/theme/templates/EEpage-header.html",
+      function (responseTxt, statusTxt, xhr) {
+        if (statusTxt == "success") {
+          // Manipulate the loaded content directly based on the 'page' parameter
+          $("#" + pageHeader).text(pageTitle);
+          console.log(
+            "Class added to #" + pageHeader + ":",
+            $("#" + pageHeader).attr("class")
+          );
+        } else if (statusTxt == "error") {
+          console.error(
+            "Error loading header.html:",
+            xhr.status + ": " + xhr.statusText
+          );
+        }
+      }
+    );
+  };
+
   window.fetchAndManipulateHeaders = function (page) {
     $("#EEHeaders").load(
-      "/theme/header.html",
+      "/theme/templates/header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
