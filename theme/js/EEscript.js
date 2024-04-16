@@ -27,17 +27,19 @@
   //   }
   // });
 
-  window.fetchAndManipulateHeaders = function (pageHeader, pageTitle) {
+  window.fetchAndManipulatePageHeaders = function (
+    pageHeader,
+    pageHeaderText,
+    pageDirectory,
+    pageDirectoryText
+  ) {
     $("#EEpage-header").load(
       "/theme/templates/EEpage-header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
-          $("#" + pageHeader).text(pageTitle);
-          console.log(
-            "Class added to #" + pageHeader + ":",
-            $("#" + pageHeader).attr("class")
-          );
+          $("#" + pageHeader).text(pageHeaderText);
+          $("#" + pageDirectory).text(pageDirectoryText);
         } else if (statusTxt == "error") {
           console.error(
             "Error loading header.html:",
@@ -55,10 +57,6 @@
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
           $("#" + page).addClass("active");
-          console.log(
-            "Class added to #" + page + ":",
-            $("#" + page).attr("class")
-          );
         } else if (statusTxt == "error") {
           console.error(
             "Error loading header.html:",

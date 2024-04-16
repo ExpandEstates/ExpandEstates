@@ -80,8 +80,17 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-    <section id="EEpage-header"></section>
-
+    <div id="EEpage-header"></div>
+    <script>
+      $(function () {
+        fetchAndManipulatePageHeaders(
+          "page-title",
+          "Expired-Listings",
+          "page-directory",
+          "Expired-Listings"
+        );
+      });
+    </script>
     <!-- blog details part start -->
     <section class="blog-details section">
       <div class="container">

@@ -77,21 +77,17 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-    <section class="single-page-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Blogs</h2>
-            <ol class="breadcrumb header-bradcrumb justify-content-center">
-              <li class="breadcrumb-item">
-                <a href="index.html" class="text-white">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Blogs</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div id="EEpage-header"></div>
+    <script>
+      $(function () {
+        fetchAndManipulatePageHeaders(
+          "page-title",
+          "Pages",
+          "page-directory",
+          "Pages"
+        );
+      });
+    </script>
 
     <section class="posts section">
       <div class="container">
