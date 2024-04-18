@@ -1,20 +1,3 @@
-// var express = require("express");
-// var app = express();
-
-// // app.get("/", (req, res) => {
-// //   res.send("Welcome to servesr");
-// // });
-
-// app.use(express.static(".."));
-
-// app.get("/about", (req, res) => {
-//   res.send("Welcome to About");
-// });
-
-// app.listen(500, () => {
-//   console.log("Node server started on port 500");
-// });
-
 var express = require("express");
 var http = require("http");
 var path = require("path");
@@ -23,27 +6,11 @@ var nodemailer = require("nodemailer");
 var app = express();
 var server = http.Server(app);
 var port = 500;
-app.use(express.static(".."));
-
-app.set("view engine", "ejs");
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static("./theme"));
 
 app.set("port", port);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// app.use(express.static("theme"));
-// app.use(
-//   express.static("/Users/jzjim/Desktop/Inbox/ExpandEstates./index.html")
-// );
-// app.get("/", function (req, res) {
-//   res.sendFile("/Users/jzjim/Desktop/Inbox/ExpandEstates./index.html");
-// });
-
-app.get("/", function (req, res) {
-  // res.render("test");
-  res.send("he;;p");
-});
 
 app.post("/send_email", function (req, res) {
   var from = req.body.from;
@@ -72,7 +39,7 @@ app.post("/send_email", function (req, res) {
     } else {
       console.log("Email Send: " + info.response);
     }
-    res.redirect("/");
+    res.redirect("/thank-you.html");
   });
 });
 
