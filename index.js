@@ -5,7 +5,7 @@
 // //   res.send("Welcome to servesr");
 // // });
 
-// app.use(express.static("./theme"));
+// app.use(express.static(".."));
 
 // app.get("/about", (req, res) => {
 //   res.send("Welcome to About");
@@ -23,7 +23,7 @@ var nodemailer = require("nodemailer");
 var app = express();
 var server = http.Server(app);
 var port = 500;
-app.use(express.static("./theme"));
+app.use(express.static(".."));
 
 app.set("view engine", "ejs");
 // app.use(express.static(__dirname + "/public"));
@@ -34,10 +34,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.use(express.static("theme"));
 // app.use(
-//   express.static("/Users/jzjim/Desktop/Inbox/ExpandEstates/theme/index.html")
+//   express.static("/Users/jzjim/Desktop/Inbox/ExpandEstates./index.html")
 // );
 // app.get("/", function (req, res) {
-//   res.sendFile("/Users/jzjim/Desktop/Inbox/ExpandEstates/theme/index.html");
+//   res.sendFile("/Users/jzjim/Desktop/Inbox/ExpandEstates./index.html");
 // });
 
 app.get("/", function (req, res) {

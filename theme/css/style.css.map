@@ -20,7 +20,7 @@
     "templates/_team.scss",
     "templates/_testimonials.scss",
     "templates/_blog.scss",
-    "templates/_/theme/pages/unwanted-homes.scss",
+    "templates/_./pages/unwanted-homes.scss",
     "templates/_footer.scss",
     "templates/_404.scss",
     "_responsive.scss"
