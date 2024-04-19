@@ -1,13 +1,13 @@
 (function ($) {
   "use strict";
   $(function () {
-    $("#EEcall-to-action").load("./templates/EEcall-to-action.html");
+    $("#EEcall-to-action").load("/theme/templates/EEcall-to-action.html");
   });
   $(function () {
-    $("#EEwidget-sidebar").load("./templates/EEwidget-sidebar.html");
+    $("#EEwidget-sidebar").load("/theme/templates/EEwidget-sidebar.html");
   });
   $(function () {
-    $("#footer").load("./templates/footer.html");
+    $("#footer").load("/theme/templates/footer.html");
   });
 
   // $("#EEHeader").load("header.html", function(responseTxt, statusTxt, xhr) {
@@ -27,7 +27,7 @@
     pageDirectoryText
   ) {
     $("#EEpage-header").load(
-      "./templates/EEpage-header.html",
+      "/theme/templates/EEpage-header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
@@ -45,7 +45,7 @@
 
   window.fetchAndManipulateHeaders = function (page) {
     $("#EEHeaders").load(
-      "./templates/header.html",
+      "/theme/templates/header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter

@@ -6,7 +6,7 @@ var nodemailer = require("nodemailer");
 var app = express();
 var server = http.Server(app);
 var port = 500;
-app.use(express.static("./theme"));
+app.use(express.static("./"));
 
 app.set("port", port);
 app.use(express.json());
