@@ -1,13 +1,13 @@
 (function ($) {
   "use strict";
   $(function () {
-    $("#EEcall-to-action").load("/theme/templates/EEcall-to-action.html");
+    $("#EE-call-to-action").load("/theme/templates/EE-call-to-action.html");
   });
   $(function () {
-    $("#EEwidget-sidebar").load("/theme/templates/EEwidget-sidebar.html");
+    $("#EE-widget-sidebar").load("/theme/templates/EE-widget-sidebar.html");
   });
   $(function () {
-    $("#footer").load("/theme/templates/footer.html");
+    $("#EE-footer").load("/theme/templates/EE-footer.html");
   });
 
   // $("#EEHeader").load("header.html", function(responseTxt, statusTxt, xhr) {
@@ -26,8 +26,8 @@
     pageDirectory,
     pageDirectoryText
   ) {
-    $("#EEpage-header").load(
-      "/theme/templates/EEpage-header.html",
+    $("#EE-page-header").load(
+      "/theme/templates/EE-page-header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
@@ -44,8 +44,8 @@
   };
 
   window.fetchAndManipulateHeaders = function (page) {
-    $("#EEHeaders").load(
-      "/theme/templates/header.html",
+    $("#EE-headers").load(
+      "/theme/templates/EE-header.html",
       function (responseTxt, statusTxt, xhr) {
         if (statusTxt == "success") {
           // Manipulate the loaded content directly based on the 'page' parameter
