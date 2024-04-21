@@ -59,4 +59,20 @@
       }
     );
   };
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var toTopButton = document.querySelector(".to-contact-btn");
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      toTopButton.style.display = "block";
+    } else {
+      toTopButton.style.display = "none";
+    }
+  }
 })(jQuery);

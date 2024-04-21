@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/send_email", function (req, res) {
+  console.log("Im here");
   var name = req.body.name;
   var userEmail = req.body.userEmail;
   console.log("from" + userEmail);
