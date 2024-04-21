@@ -2,6 +2,7 @@ var express = require("express");
 var http = require("http");
 var path = require("path");
 var nodemailer = require("nodemailer");
+const fs = require("fs");
 
 var app = express();
 var server = http.Server(app);
@@ -13,11 +14,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/send_email", function (req, res) {
-  var from = req.body.from;
-  console.log("from" + from);
+  var name = req.body.name;
+  var userEmail = req.body.userEmail;
+  console.log("from" + userEmail);
   var to = req.body.to;
   var subject = req.body.subject;
   var message = req.body.message;
+  var phoneNbr = req.body.phoneNbr;
+
+  const replacements = {
+    "{{name}}": name,
+    "{{userEmail}}": userEmail,
+    "{{message}}": message,
+    "{{phoneNbr}}": phoneNbr,
+  };
 
   var transporter = nodemailer.createTransport({
     service: "gmail",
@@ -27,20 +37,41 @@ app.post("/send_email", function (req, res) {
     },
   });
 
-  var mailOptions = {
-    from: from,
-    to: "ExpandEstates@gmail.com",
-    subject: subject,
-    text: message + "\n Email: " + from,
-  };
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email Send: " + info.response);
-    }
-    res.redirect("/thank-you.html");
+  fs.readFile("./theme/email-confirmation.html", "utf8", (err, htmlContent) => {
+    Object.entries(replacements).forEach(([placeholder, value]) => {
+      htmlContent = htmlContent.replace(new RegExp(placeholder, "g"), value);
+    });
+    var emailConfirmation = {
+      from: "expandestates@gmail.com",
+      to: userEmail,
+      subject: "Thank You and Anticipating Further Communication",
+      html: htmlContent,
+    };
+    transporter.sendMail(emailConfirmation, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email Send: " + info.response);
+      }
+      res.redirect("/theme/thank-you.html");
+    });
   });
+  fs.readFile(
+    "./theme/email-confirmation-team.html",
+    "utf8",
+    (err, htmlContent) => {
+      Object.entries(replacements).forEach(([placeholder, value]) => {
+        htmlContent = htmlContent.replace(new RegExp(placeholder, "g"), value);
+      });
+      var mailOptions = {
+        from: userEmail,
+        to: "expandestates@gmail.com",
+        subject: subject,
+        html: htmlContent,
+      };
+      transporter.sendMail(mailOptions);
+    }
+  );
 });
 
 server.listen(port, function () {
