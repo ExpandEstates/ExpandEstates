@@ -2222,3 +2222,58 @@ a:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+
+/* Accordion */
+.accordion-group .card {
+  border-radius: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf !important;
+}
+
+.accordion-group .card-body {
+  padding: 15px 20px;
+}
+
+.accordion-group .card-body img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.accordion-group .card-header .btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 13px 15px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.accordion-group .card-header .btn:before {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  z-index: 0;
+  font-size: 14px;
+  right: 16px;
+  padding: 3px 8px 1px;
+  text-align: center;
+  border-radius: 3px;
+  top: 12px;
+  content: "\f107";
+  font-weight: 700;
+  background-color: #333;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.accordion-group .card-header .btn[aria-expanded="true"] {
+  color: #28abe3;
+}
+
+.accordion-group .card-header .btn[aria-expanded="true"]::before {
+  content: "\f106";
+  background-color: #28abe3;
+}
+
+.accordion-group.accordion-classic .card-header .btn:before {
+  display: none;
+}
