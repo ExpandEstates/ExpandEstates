@@ -70,7 +70,7 @@ Fixed Navigation
     <div id="EE-headers"></div>
     <script>
       $(function () {
-        fetchAndManipulateHeaders("header4");
+        manipulateNavHeaders("header4");
       });
     </script>
     <!--
@@ -80,16 +80,11 @@ End Fixed Navigation
     <div id="EE-page-header"></div>
     <script>
       $(function () {
-        fetchAndManipulatePageHeaders(
-          "page-title",
-          "FAQ",
-          "page-directory",
-          "FAQ"
-        );
+        manipulatePageHeaders("page-title", "FAQ", "page-directory", "FAQ");
       });
     </script>
 
-    <section class="services" id="services">
+    <section class="section" id="services">
       <div class="container">
         <div class="row justify-content-center">
           <!-- section title -->
@@ -101,294 +96,63 @@ End Fixed Navigation
             </div>
           </div>
         </div>
-          <div class="accordion accordion-group" id="our-values-accordion">
-            <div id = "EE-faq-card"></div>
-            <script>
-              $(function () {
-                fetchAndManipulateFAQCard(
-                  "card-header",
-                  "headerFour",
-                  "collapseFour"
-                );
-              });
-            </script>
-
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="headingOne">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="false"
-                    aria-controls="collapseOne"
-                  >
-                    Safety
-                  </button>
-                </h2>
-              </div>
-
-              <div
-                id="collapseOne"
-                class="collapse"
-                aria-labelledby="headingOne"
-                data-parent="#our-values-accordion"
-              >
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidata
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="headingTwo">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Customer Service
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseTwo"
-                class="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#our-values-accordion"
-              >
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidata
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="headingThree">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-block text-left collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Integrity
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#our-values-accordion"
-              >
-                <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidata
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--/ Accordion end -->
-        </div>
       </div>
-    </section>
-
-    <section class="posts section">
       <div class="container">
         <div class="row">
-          <!-- /section title -->
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-1.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
+          <div class="col-lg-8">
+            <div class="accordion accordion-group" id="our-values-accordion">
+              <div id="EE-faq-cards-container"></div>
+              <script>
+                $(function () {
+                  const faqCardsData = [
+                    { cardId: 1, question: "Hey", answer: "hi" },
+                    { cardId: 2, question: "Hello", answer: "asdfa" },
+                    { cardId: 3, question: "adsfa", answer: "asdf" },
+                    { cardId: 4, question: "Hey", answer: "hi" },
+                    { cardId: 5, question: "Hello", answer: "asdfa" },
+                    { cardId: 6, question: "adsfa", answer: "asdf" },
+                    { cardId: 7, question: "Hey", answer: "hi" },
+                    { cardId: 8, question: "Hello", answer: "asdfa" },
+                    { cardId: 9, question: "adsfa", answer: "asdf" },
+                    { cardId: 10, question: "Hey", answer: "hi" },
+                    { cardId: 11, question: "Hello", answer: "asdfa" },
+                    { cardId: 12, question: "adsfa", answer: "asdf" },
+                    // Add more FAQ card data as needed
+                  ];
 
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html">Unwanted Homes</a>
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a class="btn btn-main" href="/theme/pages/unwanted-homes.html"
-                  >Read more</a
-                >
-              </div>
+                  faqCardsData.forEach((cardData) => {
+                    generateFAQCard(cardData);
+                  });
+                });
+
+                function generateFAQCard(data) {
+                  const { cardId, question, answer } = data;
+
+                  // Create div element for FAQ card
+                  const cardDiv = `<div id="EE-faq-card-${cardId}"></div>`;
+                  $("#EE-faq-cards-container").append(cardDiv);
+
+                  // Create script element for executing JavaScript
+                  const script = document.createElement("script");
+                  script.textContent = `
+                  $(function () {
+                    manipulateFAQCard("${cardId}","${question}", "${answer}");
+                  });
+                `;
+                  document.body.appendChild(script);
+                }
+              </script>
             </div>
-          </article>
-          <!-- /single blog post -->
-
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-2.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
-
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html"
-                    >Expired Listings</a
-                  >
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a
-                  class="btn btn-main"
-                  href="/theme/pages/expired-listings.html"
-                  >Read more</a
-                >
-              </div>
-            </div>
-          </article>
-          <!-- end single blog post -->
-
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-3.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
-
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html">Hints for Life</a>
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a class="btn btn-main" href="/theme/pages/unwanted-homes.html"
-                  >Read more</a
-                >
-              </div>
-            </div>
-          </article>
-          <!-- /section title -->
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-4.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
-
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html">Looking Back</a>
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a class="btn btn-main" href="/theme/pages/unwanted-homes.html"
-                  >Read more</a
-                >
-              </div>
-            </div>
-          </article>
-          <!-- /single blog post -->
-
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-5.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
-
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html">Laugh and Cry</a>
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a class="btn btn-main" href="/theme/pages/unwanted-homes.html"
-                  >Read more</a
-                >
-              </div>
-            </div>
-          </article>
-          <!-- end single blog post -->
-
-          <!-- single blog post -->
-          <article class="col-lg-4 col-md-6">
-            <div class="post-item">
-              <div class="media-wrapper">
-                <img
-                  loading="lazy"
-                  src="images/blog/post-6.jpg"
-                  alt="amazing caves coverimage"
-                  class="img-fluid"
-                />
-              </div>
-
-              <div class="content">
-                <h3>
-                  <a href="/theme/pages/unwanted-homes.html">Regret No More</a>
-                </h3>
-                <p>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non skateboard dolor brunch.
-                </p>
-                <a class="btn btn-main" href="/theme/pages/unwanted-homes.html"
-                  >Read more</a
-                >
-              </div>
-            </div>
-          </article>
+            <!--/ Accordion end -->
+          </div>
+          <div class="col-lg-4 mt-5 mt-lg-0">
+            <div id="EE-widget-sidebar"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <a class="btn to-contact-btn" href="/theme/contact.html">Contact Us </a>
-
     <div id="EE-footer"></div>
 
     <!-- end Footer Area

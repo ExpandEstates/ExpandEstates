@@ -10,17 +10,7 @@
     $("#EE-footer").load("/theme/templates/EE-footer.html");
   });
 
-  // $("#EEHeader").load("header.html", function(responseTxt, statusTxt, xhr) {
-  //   if (statusTxt == "success") {
-  //     // Manipulate the loaded content directly
-  //     $("#header1").addClass("active");
-  //     console.log("Class added to #header1:", $("#header1").attr("class"));
-  //   } else if (statusTxt == "error") {
-  //     console.error("Error loading header.html:", xhr.status + ": " + xhr.statusText);
-  //   }
-  // });
-
-  window.fetchAndManipulatePageHeaders = function (
+  window.manipulatePageHeaders = function (
     pageHeader,
     pageHeaderText,
     pageDirectory,
@@ -30,63 +20,34 @@
       "/theme/templates/EE-page-header.html",
       function (responseTxt, statusTxt, xhr) {
         var ref = $(this);
-        if (statusTxt == "success") {
-          // Manipulate the loaded content directly based on the 'page' parameter
-          ref.find("#" + pageHeader).text(pageHeaderText);
-          ref.find("#" + pageDirectory).text(pageDirectoryText);
-        } else if (statusTxt == "error") {
-          console.error(
-            "Error loading header.html:",
-            xhr.status + ": " + xhr.statusText
-          );
-        }
+        ref.find("#" + pageHeader).text(pageHeaderText);
+        ref.find("#" + pageDirectory).text(pageDirectoryText);
       }
     );
   };
 
-  window.fetchAndManipulateHeaders = function (page) {
+  window.manipulateNavHeaders = function (page) {
     $("#EE-headers").load(
       "/theme/templates/EE-header.html",
       function (responseTxt, statusTxt, xhr) {
         var refPage = $(this);
-        if (statusTxt == "success") {
-          // Manipulate the loaded content directly based on the 'page' parameter
-          refPage.find("#" + page).addClass("active");
-        } else if (statusTxt == "error") {
-          console.error(
-            "Error loading header.html:",
-            xhr.status + ": " + xhr.statusText
-          );
-        }
+        refPage.find("#" + page).addClass("active");
       }
     );
   };
 
-  window.fetchAndManipulateFAQCard = function (
-    pageHeader,
-    pageHeaderText,
-    collapseNbr
-  ) {
-    $("#EE-faq-card").load(
+  window.manipulateFAQCard = function (cardId, question, answer) {
+    $("#EE-faq-card-" + cardId).load(
       "/theme/templates/EE-faq-card.html",
       function (responseTxt, statusTxt, xhr) {
-        var faqCard = $(this); // Reference to the loaded FAQ card content
-
-        if (statusTxt == "success") {
-          // Manipulate the loaded content directly based on the 'page' parameter
-          faqCard.find("." + pageHeader).attr("id", pageHeaderText);
-          faqCard.find(".collapse").attr("id", collapseNbr);
-          faqCard.find(".btn").attr("data-target", "#" + collapseNbr);
-          faqCard.find(".btn").attr("aria-controls", collapseNbr);
-          faqCard.find(".collapse").attr("aria-labelledby", pageHeaderText);
-
-          console.log(pageHeader);
-        } else if (statusTxt == "error") {
-          console.error(
-            "Error loading header.html:",
-            xhr.status + ": " + xhr.statusText
-          );
-        }
+        var faqCard = $(this);
+        faqCard.find(".card-header").attr("id", "header-" + cardId);
+        faqCard.find(".collapse").attr("id", "collapse-" + cardId);
+        faqCard.find(".btn").attr("data-target", "#" + "collapse-" + cardId);
+        faqCard.find(".btn").attr("aria-controls", "collapse-" + cardId);
+        faqCard.find(".collapse").attr("aria-labelledby", "header-" + cardId);
+        faqCard.find(".btn").text(question);
+        faqCard.find(".card-body").text(answer);
       }
     );
   };

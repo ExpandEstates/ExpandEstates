@@ -2249,7 +2249,7 @@ a:hover {
 }
 
 .accordion-group .card-header .btn:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "themefisher-font";
   position: absolute;
   z-index: 0;
   font-size: 14px;
@@ -2258,7 +2258,7 @@ a:hover {
   text-align: center;
   border-radius: 3px;
   top: 12px;
-  content: "\f107";
+  content: "\f489";
   font-weight: 700;
   background-color: #333;
   color: #fff;
@@ -2270,7 +2270,7 @@ a:hover {
 }
 
 .accordion-group .card-header .btn[aria-expanded="true"]::before {
-  content: "\f106";
+  content: "\f462";
   background-color: #28abe3;
 }
 
