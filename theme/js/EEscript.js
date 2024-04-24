@@ -52,6 +52,45 @@
     );
   };
 
+  window.manipulateWidgetPostContent = function (
+    cardId,
+    postTitle,
+    postDate,
+    newImgSrc,
+    newHrefSrc
+  ) {
+    $("#EE-widget-post-content-" + cardId).load(
+      "/theme/templates/EE-widget-post-content.html",
+      function (responseTxt, statusTxt, xhr) {
+        var faqCard = $(this);
+        faqCard.find("img").attr("src", newImgSrc);
+        faqCard.find("a").attr("href", newHrefSrc);
+        faqCard.find("h5").text(postTitle);
+        faqCard.find("h6").text(postDate);
+      }
+    );
+  };
+
+  window.generatePostContent = function (
+    cardId,
+    postTitle,
+    postDate,
+    newImgSrc,
+    newHrefSrc
+  ) {
+    // Create div element for FAQ card
+    const cardDiv = `<div id="EE-widget-post-content-${cardId}"></div>`;
+    $("#EE-post-container").append(cardDiv);
+
+    const script = document.createElement("script");
+    script.textContent = `
+      $(function () {
+        manipulateWidgetPostContent("${cardId}","${postTitle}", "${postDate}", "${newImgSrc}", "${newHrefSrc}");
+      });
+      `;
+    document.body.appendChild(script);
+  };
+
   window.onscroll = function () {
     scrollFunction();
   };

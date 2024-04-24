@@ -190,7 +190,45 @@ End Fixed Navigation
             </article>
           </div>
           <div class="col-lg-4 mt-5 mt-lg-0">
-            <div id="EE-widget-sidebar"></div>
+            <aside class="sidebar pl-0 pl-lg-4">
+              <div class="widget-post widget lastest-post-container">
+                <div id="EE-widget-sidebar"></div>
+                <div id="EE-post-container"></div>
+
+                <script>
+                  $(function () {
+                    const postContentData = [
+                      {
+                        cardId: 1,
+                        postTitle:
+                          "Condentum Quam Vitae Ligu. tempor bibendum.",
+                        postDate: "Aug 20, 2019",
+                        newImgSrc: "/theme/images/blog/post-1.jpg",
+                        newHrefSrc: "/theme/pages/unwanted-homes.html",
+                      },
+                      {
+                        cardId: 2,
+                        postTitle:
+                          "Condentum Quam Vitae Ligu. tempor bibendum.",
+                        postDate: "Aug 20, 2018",
+                        newImgSrc: "/theme/images/blog/post-2.jpg",
+                        newHrefSrc: "/theme/pages/unwanted-homes.html",
+                      },
+                      // Add more FAQ card data as needed
+                    ];
+                    postContentData.forEach((contentData) => {
+                      generatePostContent(
+                        contentData.cardId,
+                        contentData.postTitle,
+                        contentData.postDate,
+                        contentData.newImgSrc,
+                        contentData.newHrefSrc
+                      );
+                    });
+                  });
+                </script>
+              </div>
+            </aside>
           </div>
         </div>
       </div>
