@@ -386,7 +386,7 @@ a:hover {
 }
 
 .single-page-header {
-  background-image: url("../images/about/about-header.jpg");
+  background-image: url("/theme/images/about/about-header.jpg");
   background-size: cover;
   padding: 140px 0 70px;
   text-align: center;
@@ -851,7 +851,7 @@ a:hover {
 ==================================================================*/
 .call-to-action {
   padding: 100px 0;
-  background: url("../images/call-to-action/call-to-action-bg-2.jpg");
+  background: url("/theme/images/call-to-action/call-to-action-1.jpg");
   background-size: cover;
   color: #fff;
 }
@@ -862,25 +862,6 @@ a:hover {
   color: #fff;
 }
 .call-to-action .btn-main {
-  margin-top: 20px;
-}
-
-/*=================================================================
- Call To Action 2
-==================================================================*/
-.call-to-action-2 {
-  padding: 100px 0;
-  background-image: url("../images/call-to-action/call-to-action-bg.jpg");
-  background-size: cover;
-  color: #fff;
-}
-.call-to-action-2 h2 {
-  line-height: 1.5;
-}
-.call-to-action-2 p {
-  color: #fff;
-}
-.call-to-action-2 .btn-main {
   margin-top: 20px;
 }
 
@@ -1010,72 +991,6 @@ a:hover {
   font-size: 18px;
   margin: 0;
   color: #666;
-}
-
-/*=================================================================
-  Pricing section
-==================================================================*/
-.pricing-table {
-  padding: 100px 0;
-  padding-bottom: 70px;
-  background: url("../images/pricing-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.pricing-table .title p {
-  color: #fff;
-}
-.pricing-table:before {
-  background: rgba(0, 0, 0, 0.62);
-  position: absolute;
-  z-index: 999;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.pricing-table .container {
-  position: relative;
-  z-index: 999;
-}
-.pricing-table .pricing-item {
-  padding: 40px 55px 65px;
-  background: #fff;
-  margin-bottom: 30px;
-}
-.pricing-table .pricing-item a.btn-main {
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-.pricing-table .pricing-item li {
-  font-weight: 400;
-  padding: 10px 0;
-  color: #666;
-}
-.pricing-table .pricing-item li i {
-  margin-right: 6px;
-}
-.pricing-table .price-title {
-  padding: 30px 0 20px;
-}
-.pricing-table .price-title > h3 {
-  font-weight: 700;
-  margin: 0 0 5px;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-.pricing-table .price-title > p {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  margin-top: 5px;
-}
-.pricing-table .price-title .value {
-  color: #28abe3;
-  font-size: 50px;
-  padding: 10px 0;
 }
 
 /*=================================================================
