@@ -2,7 +2,7 @@
   "name": "bingo",
   "version": "1.0.0",
   "description": "bingo free business template",
-  "author": "Themefisher",
+  "author": "Expand Estates",
   "license": "MIT",
   "scripts": {
     "dev": "gulp",

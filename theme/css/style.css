@@ -839,7 +839,7 @@ a:hover {
   margin-right: 12px;
   margin-left: -45px;
   content: "\f375";
-  font-family: "themefisher-font";
+  font-family: "expandestates-font";
   opacity: 1;
   border-radius: 50%;
   padding: 2px 8px;
@@ -2249,7 +2249,7 @@ a:hover {
 }
 
 .accordion-group .card-header .btn:before {
-  font-family: "themefisher-font";
+  font-family: "expandestates-font";
   position: absolute;
   z-index: 0;
   font-size: 14px;
