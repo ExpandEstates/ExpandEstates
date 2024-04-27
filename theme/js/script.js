@@ -37,18 +37,6 @@
   $(".hero-slider").slickAnimation();
 
   /* ========================================================================= */
-  /*	Portfolio Filtering Hook
-  /* =========================================================================  */
-  // filter
-  setTimeout(function () {
-    var containerEl = document.querySelector(".filtr-container");
-    var filterizd;
-    if (containerEl) {
-      filterizd = $(".filtr-container").filterizr({});
-    }
-  }, 500);
-
-  /* ========================================================================= */
   /*	Testimonial Carousel
   /* =========================================================================  */
   //Init the slider
