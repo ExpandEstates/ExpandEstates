@@ -38,7 +38,7 @@ app.post("/send_email", function (req, res) {
     },
   });
 
-  fs.readFile("./theme/email-confirmation.html", "utf8", (err, htmlContent) => {
+  fs.readFile("./main/email-confirmation.html", "utf8", (err, htmlContent) => {
     Object.entries(replacements).forEach(([placeholder, value]) => {
       htmlContent = htmlContent.replace(new RegExp(placeholder, "g"), value);
     });
@@ -54,11 +54,11 @@ app.post("/send_email", function (req, res) {
       } else {
         console.log("Email Send: " + info.response);
       }
-      res.redirect("/theme/thank-you.html");
+      res.redirect("/main/thank-you.html");
     });
   });
   fs.readFile(
-    "./theme/email-confirmation-team.html",
+    "./main/email-confirmation-team.html",
     "utf8",
     (err, htmlContent) => {
       Object.entries(replacements).forEach(([placeholder, value]) => {
