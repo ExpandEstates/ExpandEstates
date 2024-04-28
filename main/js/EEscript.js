@@ -26,14 +26,30 @@
     );
   };
 
-  window.manipulateNavHeaders = function (page) {
-    $("#EE-headers").load(
-      "/main/templates/EE-header.html",
-      function (responseTxt, statusTxt, xhr) {
-        var refPage = $(this);
-        refPage.find("#" + page).addClass("active");
-      }
-    );
+  window.manipulateNavHeaders = function (page, context) {
+    var templatePath = ""; // Define the default template path
+
+    // Determine the template path based on the context
+    switch (context) {
+      case "rootDir":
+        templatePath = "./main/templates/EE-header.html";
+        break;
+      case "mainDir":
+        templatePath = "./templates/EE-header.html";
+        break;
+      case "pagesDir":
+        templatePath = "../templates/EE-header.html";
+        break;
+      // Add more cases for different contexts if needed
+      default:
+        templatePath = "/main/templates/default-header.html"; // Default template path
+    }
+
+    // Load the header using the determined template path
+    $("#EE-headers").load(templatePath, function (responseTxt, statusTxt, xhr) {
+      var refPage = $(this);
+      refPage.find("#" + page).addClass("active");
+    });
   };
 
   window.manipulateFAQCard = function (cardId, question, answer) {
