@@ -1,13 +1,25 @@
 (function ($) {
   "use strict";
   $(function () {
-    $("#EE-call-to-action").load("/main/templates/EE-call-to-action.html");
+    $("#EE-call-to-action").load(
+      window.location.hostname === "expandestates.github.io"
+        ? "/ExpandEstates/main/templates/EE-call-to-action.html"
+        : "/main/templates/EE-call-to-action.html"
+    );
   });
   $(function () {
-    $("#EE-widget-sidebar").load("/main/templates/EE-widget-sidebar.html");
+    $("#EE-widget-sidebar").load(
+      window.location.hostname === "expandestates.github.io"
+        ? "/ExpandEstates/main/templates/EE-widget-sidebar.html"
+        : "/main/templates/EE-widget-sidebar.html"
+    );
   });
   $(function () {
-    $("#EE-footer").load("/main/templates/EE-footer.html");
+    $("#EE-footer").load(
+      window.location.hostname === "expandestates.github.io"
+        ? "/ExpandEstates/main/templates/EE-footer.html"
+        : "/main/templates/EE-footer.html"
+    );
   });
 
   window.manipulatePageHeaders = function (
@@ -17,7 +29,9 @@
     pageDirectoryText
   ) {
     $("#EE-page-header").load(
-      "/main/templates/EE-page-header.html",
+      window.location.hostname === "expandestates.github.io"
+        ? "/ExpandEstates/main/templates/EE-page-header.html"
+        : "/main/templates/EE-page-header.html",
       function (responseTxt, statusTxt, xhr) {
         var ref = $(this);
         ref.find("#" + pageHeader).text(pageHeaderText);
@@ -85,7 +99,9 @@
     newHrefSrc
   ) {
     $("#EE-widget-post-content-" + cardId).load(
-      "/main/templates/EE-widget-post-content.html",
+      window.location.hostname === "expandestates.github.io"
+        ? "/ExpandEstates/main/templates/EE-widget-post-content.html"
+        : "/main/templates/EE-widget-post-content.html",
       function (responseTxt, statusTxt, xhr) {
         var faqCard = $(this);
         faqCard.find("img").attr("src", newImgSrc);

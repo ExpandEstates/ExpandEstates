@@ -695,7 +695,7 @@ a:hover {
 ==================================================================*/
 .call-to-action {
   padding: 100px 0;
-  background: url("./images/call-to-action/call-to-action-1.jpg");
+  background: url("../images/call-to-action/call-to-action-1.jpg");
   background-size: cover;
   color: #fff;
 }
