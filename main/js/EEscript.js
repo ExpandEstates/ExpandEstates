@@ -38,7 +38,7 @@
 
   window.manipulateFAQCard = function (cardId, question, answer) {
     $("#EE-faq-card-" + cardId).load(
-      "/main/templates/EE-faq-card.html",
+      "./templates/EE-faq-card.html",
       function (responseTxt, statusTxt, xhr) {
         var faqCard = $(this);
         faqCard.find(".card-header").attr("id", "header-" + cardId);
