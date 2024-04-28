@@ -122,4 +122,12 @@
       toTopButton.style.display = "none";
     }
   }
+
+  if (window.location.hostname === "username.github.io") {
+    // Add '/ExpandEstates' to the beginning of all links
+    document.querySelectorAll("a[href]").forEach(function (anchor) {
+      var href = anchor.getAttribute("href");
+      anchor.setAttribute("href", "/ExpandEstates/" + href);
+    });
+  }
 })(jQuery);
