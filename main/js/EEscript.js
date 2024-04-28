@@ -49,6 +49,15 @@
     $("#EE-headers").load(templatePath, function (responseTxt, statusTxt, xhr) {
       var refPage = $(this);
       refPage.find("#" + page).addClass("active");
+      if (window.location.hostname === "expandestates.github.io") {
+        console.log("gello");
+        console.log(document.querySelectorAll("href"));
+        document.querySelectorAll("a[href]").forEach(function (anchor) {
+          console.log(anchor);
+          var href = anchor.getAttribute("href");
+          anchor.setAttribute("href", "/ExpandEstates" + href);
+        });
+      }
     });
   };
 
