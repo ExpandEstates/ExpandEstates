@@ -54,7 +54,7 @@ app.post("/send_email", function (req, res) {
       } else {
         console.log("Email Send: " + info.response);
       }
-      res.redirect("/main/thank-you.html");
+      res.redirect("./thank-you.html");
     });
   });
   fs.readFile(
