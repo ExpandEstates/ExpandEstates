@@ -37,7 +37,10 @@ gulp.task("html:build", function () {
     )
     .pipe(
       comments(`
-    WEBSITE: https://ExpandEstates.com
+    WEBSITE: https://themefisher.com
+    TWITTER: https://twitter.com/themefisher
+    FACEBOOK: https://www.facebook.com/themefisher
+    GITHUB: https://github.com/themefisher/
     `)
     )
     .pipe(gulp.dest(path.build.dirDev))
@@ -62,7 +65,10 @@ gulp.task("scss:build", function () {
     .pipe(sourcemaps.write("/"))
     .pipe(
       comments(`
-    WEBSITE: https://ExpandEstates.com
+    WEBSITE: https://themefisher.com
+    TWITTER: https://twitter.com/themefisher
+    FACEBOOK: https://www.facebook.com/themefisher
+    GITHUB: https://github.com/themefisher/
     `)
     )
     .pipe(gulp.dest(path.build.dirDev + "css/"))
@@ -79,10 +85,13 @@ gulp.task("js:build", function () {
     .src(path.src.js)
     .pipe(
       comments(`
-  WEBSITE: https://ExpandEstates.com
+  WEBSITE: https://themefisher.com
+  TWITTER: https://twitter.com/themefisher
+  FACEBOOK: https://www.facebook.com/themefisher
+  GITHUB: https://github.com/themefisher/
   `)
     )
-    .pipe(gulp.dest(path.build.dirDev + "/theme/js/"))
+    .pipe(gulp.dest(path.build.dirDev + "js/"))
     .pipe(
       bs.reload({
         stream: true,
@@ -106,7 +115,7 @@ gulp.task("images:build", function () {
 gulp.task("plugins:build", function () {
   return gulp
     .src(path.src.plugins)
-    .pipe(gulp.dest(path.build.dirDev + "/theme/plugins/"))
+    .pipe(gulp.dest(path.build.dirDev + "plugins/"))
     .pipe(
       bs.reload({
         stream: true,
