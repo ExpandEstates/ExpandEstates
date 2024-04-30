@@ -1,5 +1,4 @@
 "use strict";
-
 const sass = require("gulp-sass")(require("sass"));
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
@@ -8,102 +7,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const bs = require("browser-sync").create();
 const rimraf = require("rimraf");
 const comments = require("gulp-header-comment");
-const mail = require("gulp-mail");
-
-var express = require("express");
-var http = require("http");
-var path = require("path");
-var nodemailer = require("nodemailer");
-const fs = require("fs");
-
-var app = express();
-var server = http.Server(app);
-var port = 3000;
-
-console.log("Reached Gulpfile.js");
-app.use(express.static("./theme/"));
-
-app.set("port", port);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.post("/send_email", function (req, res) {
-  console.log("Im here");
-  var name = req.body.name;
-  var userEmail = req.body.userEmail;
-  console.log("from" + userEmail);
-  var to = req.body.to;
-  var subject = req.body.subject;
-  var message = req.body.message;
-  var phoneNbr = req.body.phoneNbr;
-
-  const replacements = {
-    "{{name}}": name,
-    "{{userEmail}}": userEmail,
-    "{{message}}": message,
-    "{{phoneNbr}}": phoneNbr,
-  };
-
-  var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "expandestates@gmail.com",
-      pass: "cazl hvkj culg uzko",
-    },
-  });
-
-  var emailConfirmation = {
-    from: "expandestates@gmail.com",
-    to: userEmail,
-    subject: subject,
-    html: "asdfs",
-  };
-  transporter.sendMail(emailConfirmation, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email Send: " + info.response);
-    }
-    res.redirect("Thank-You.html");
-  });
-
-  // fs.readFile("/email-confirmation.html", "utf8", (err, htmlContent) => {
-  //   Object.entries(replacements).forEach(([placeholder, value]) => {
-  //     htmlContent = htmlContent.replace(new RegExp(placeholder, "g"), value);
-  //   });
-  //   var emailConfirmation = {
-  //     from: "expandestates@gmail.com",
-  //     to: userEmail,
-  //     subject: "Thank You and Anticipating Further Communication",
-  //     html: htmlContent,
-  //   };
-  //   transporter.sendMail(emailConfirmation, function (error, info) {
-  //     if (error) {
-  //       console.log(error);
-  //     } else {
-  //       console.log("Email Send: " + info.response);
-  //     }
-  //     res.redirect("/main/thank-you.html");
-  //   });
-  // });
-  // fs.readFile("/email-confirmation-team.html", "utf8", (err, htmlContent) => {
-  //   Object.entries(replacements).forEach(([placeholder, value]) => {
-  //     htmlContent = htmlContent.replace(new RegExp(placeholder, "g"), value);
-  //   });
-  //   var mailOptions = {
-  //     from: userEmail,
-  //     to: "expandestates@gmail.com",
-  //     subject: subject,
-  //     html: htmlContent,
-  //   };
-  //   transporter.sendMail(mailOptions);
-  // });
-});
-
-console.log("Starting Port");
-server.listen(port, function () {
-  console.log("Starting Server on port: " + port);
-});
 
 var path = {
   src: {
@@ -303,14 +206,14 @@ gulp.task(
     "plugins:build",
     "others:build",
     "templates:build",
-    "pages:build"
-    // gulp.parallel("watch:build", function () {
-    //   bs.init({
-    //     server: {
-    //       baseDir: path.build.dirDev,
-    //     },
-    //   });
-    // })
+    "pages:build",
+    gulp.parallel("watch:build", function () {
+      bs.init({
+        server: {
+          baseDir: path.build.dirDev,
+        },
+      });
+    })
   )
 );
 
