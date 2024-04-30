@@ -1,0 +1,148 @@
+@@include('../partials/header.htm')
+@@include('../partials/blocks/navigation.htm',{"active": "home"})
+@@include('blocks/page-header.htm', { "page-name": "Unpaid Property Taxes" })
+<section class="blog-details section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <article class="post">
+          <div class="post-image mb-5">
+            <img
+              loading="lazy"
+              class="img-fluid w-100"
+              src="../images/why-sell/post-7.jpg"
+              alt="post-image"
+            />
+          </div>
+          <!-- Post Content -->
+          <div class="post-content">
+            <h3>Unpaid Property Taxes</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Admin</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 comments</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 likes</a>
+              </li>
+            </ul>
+            <p>
+              If your property taxes have lapsed for a considerable period, you
+              might face the looming threat of losing ownership of your
+              property. Most state laws allow for a lien to be placed on your
+              property when property taxes become overdue, potentially leading
+              to a forced sale to the highest bidder. If you've fallen behind on
+              property taxes and fear losing your home, consider a swift cash
+              sale with Expand Estates. We can spare you the distress of having
+              your home sold at auction and the detrimental impact on your
+              credit. Selling your home with unpaid property taxes is within
+              reach with our assistance. Whether you've received notice of an
+              impending sale or you're worried about the sheriff showing up at
+              your door due to unpaid taxes, we're here to facilitate a quick
+              cash sale.
+            </p>
+            <p>
+              Expand Estates specializes in assisting homeowners in challenging
+              situations, offering a cash purchase option for your home. This
+              approach provides numerous benefits, notably a rapid turnaround
+              time. Upon contacting Expand Estates, we swiftly assess your
+              situation and make a fair cash offer. We understand that time is
+              of the essence, so bypassing the traditional selling process
+              allows you to obtain cash for your home without the burden of
+              unpaid property taxes or costly repairs. Once you accept our
+              offer, we expedite the sale and close on your house much faster
+              than a conventional sale.
+            </p>
+            <!-- blockquote -->
+            <blockquote>
+              Turn the burden of unpaid property taxes into a doorway to
+              financial relief with Expand Estates, where swift solutions meet
+              peace of mind
+            </blockquote>
+            <p>
+              We recognize that financial hardships can arise unexpectedly, and
+              selling your home due to unpaid taxes can be overwhelming. We
+              collaborate with you to sell your home swiftly, offering a fair
+              cash price and alleviating the complexities associated with real
+              estate agents, buyers, and lenders. With a track record of
+              assisting numerous homeowners in the Charlotte, NC area, we're
+              dedicated to guiding you through the process from start to finish,
+              ensuring a quick and seamless sale. If you're seeking to sell your
+              home with unpaid property taxes or require a fast cash sale for
+              other reasons, Expand Estates is here to assist you. Contact us
+              today to discover how we can help you sell your home swiftly,
+              allowing you to move forward with peace of mind.
+            </p>
+            <!-- post share -->
+            <ul class="post-content-share list-inline mb-5">
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-skype"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <aside class="sidebar pl-0 pl-lg-4">
+          <div class="widget-post widget lastest-post-container">
+            <div id="EE-widget-sidebar"></div>
+            <div id="EE-post-container"></div>
+
+            <script>
+              $(function () {
+                const postContentData = [
+                  {
+                    cardId: 1,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2019",
+                    newImgSrc: "../images/why-sell/post-12.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  {
+                    cardId: 2,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2018",
+                    newImgSrc: "../images/why-sell/post-2.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  // Add more FAQ card data as needed
+                ];
+                postContentData.forEach((contentData) => {
+                  generatePostContent(
+                    contentData.cardId,
+                    contentData.postTitle,
+                    contentData.postDate,
+                    contentData.newImgSrc,
+                    contentData.newHrefSrc
+                  );
+                });
+              });
+            </script>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+@@include('blocks/call-to-action-2.htm')
+@@include('blocks/to-contact-button.htm') @@include('blocks/footer.htm')
+@@include('footer.htm')

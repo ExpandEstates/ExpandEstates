@@ -1,0 +1,162 @@
+@@include('../partials/header.htm')
+@@include('../partials/blocks/navigation.htm',{"active": "home"})
+@@include('blocks/page-header.htm', { "page-name": "Foreclosures" })
+<section class="blog-details section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <article class="post">
+          <div class="post-image mb-5">
+            <img
+              loading="lazy"
+              class="img-fluid w-100"
+              src="../images/why-sell/post-1.jpg"
+              alt="post-image"
+            />
+          </div>
+          <!-- Post Content -->
+          <div class="post-content">
+            <h3>Foreclosures</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Admin</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 comments</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 likes</a>
+              </li>
+            </ul>
+            <p>
+              If you find yourself on the brink of losing your home to
+              foreclosure, feeling trapped with no way out, we extend a helping
+              hand to sell your foreclosed home before matters worsen. The
+              looming threat of foreclosure often brings a sense of despair,
+              witnessing your home slipping away while feeling powerless to
+              intervene. The silver lining is that you can sell your home
+              swiftly, averting eviction and salvaging something from the
+              situation. Various circumstances can lead homeowners down the path
+              of foreclosure—even the most seasoned investors can find
+              themselves with properties that drain resources instead of
+              yielding returns. If you're grappling with foreclosure on a
+              property you once saw as an investment, rest assured, you're not
+              alone.
+            </p>
+            <p>There are myriad reasons for foreclosure, such as:</p>
+
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                - A property's value may never recover to match the mortgage or
+                purchase price, a common occurrence in volatile real estate
+                markets.
+              </li>
+              <li class="list-inline-item">
+                - Unforeseen circumstances may render you unable to sustain
+                mortgage payments.
+              </li>
+              <li class="list-inline-item">
+                - Urgent relocations due to job changes or family emergencies
+                can leave you unable to sell your current property or manage
+                dual mortgage payments.
+              </li>
+            </ul>
+
+            <p>
+              These are just a few scenarios that can lead to foreclosure. The
+              good news is, we're here to offer a fair cash price for your home,
+              enabling you to sell quickly and sidestep the damaging effects of
+              foreclosure on your credit.
+            </p>
+
+            <!-- blockquote -->
+            <blockquote>
+              Amidst the storm of foreclosure, find solace in a swift sale with
+              Expand Estates, turning uncertainty into opportunity.
+            </blockquote>
+            <p>
+              If foreclosure looms, we can expedite the sale of your property.
+              We purchase houses for cash in all conditions throughout the
+              Charlotte, NC area. Whether your home is in pristine condition,
+              rundown, damaged by tenants, or in need of extensive repairs,
+              we'll buy it from you. Collaborating with our cash home buyers
+              ensures a swift sale, providing you with the opportunity to
+              rebuild and move forward with your life. We offer a lifeline in
+              what may feel like an insurmountable situation. Upon contacting
+              us, we'll present you with a fair offer and work swiftly to settle
+              the property, alleviating your stress and worries. We'll closely
+              guide you through the sales process, enabling you to transition to
+              the next chapter of your life.
+            </p>
+            <!-- post share -->
+            <ul class="post-content-share list-inline mb-5">
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-skype"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <aside class="sidebar pl-0 pl-lg-4">
+          <div class="widget-post widget lastest-post-container">
+            <div id="EE-widget-sidebar"></div>
+            <div id="EE-post-container"></div>
+
+            <script>
+              $(function () {
+                const postContentData = [
+                  {
+                    cardId: 1,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2019",
+                    newImgSrc: "../images/why-sell/post-1.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  {
+                    cardId: 2,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2018",
+                    newImgSrc: "../images/why-sell/post-2.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  // Add more FAQ card data as needed
+                ];
+                postContentData.forEach((contentData) => {
+                  generatePostContent(
+                    contentData.cardId,
+                    contentData.postTitle,
+                    contentData.postDate,
+                    contentData.newImgSrc,
+                    contentData.newHrefSrc
+                  );
+                });
+              });
+            </script>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('blocks/call-to-action-2.htm')
+@@include('blocks/to-contact-button.htm') @@include('blocks/footer.htm')
+@@include('footer.htm')

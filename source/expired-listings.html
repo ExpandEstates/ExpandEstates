@@ -1,0 +1,145 @@
+@@include('../partials/header.htm')
+@@include('../partials/blocks/navigation.htm',{"active": "home"})
+@@include('blocks/page-header.htm', { "page-name": "Expired-Listings" })
+<section class="blog-details section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <article class="post">
+          <div class="post-image mb-5">
+            <img
+              loading="lazy"
+              class="img-fluid w-100"
+              src="../images/why-sell/post-1.jpg"
+              alt="post-image"
+            />
+          </div>
+          <!-- Post Content -->
+          <div class="post-content">
+            <h3>Expired Listings</h3>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Admin</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 comments</a>&nbsp;/
+              </li>
+              <li class="list-inline-item">
+                <a href="../pages/unwanted-homes.html">30 likes</a>
+              </li>
+            </ul>
+            <p>
+              If your home listing has expired, leaving you burdened with the
+              property and its financial obligations, you're not alone. But
+              there are ways out of this situation. Even if you're tired of
+              waiting and don't want to relist, you have options to sell your
+              home quickly and for cash. We understand the challenges and offer
+              solutions to homeowners in the Charlotte, NC area, providing fair
+              cash offers that allow you to move on within about a week. We
+              specialize in buying houses with expired listings, offering a
+              swift and fair alternative to traditional selling methods. There
+              are various reasons why a listing might expire, such as an
+              unmotivated agent, necessary repairs, ineffective advertising, or
+              unfavorable market conditions. Regardless of the cause, we're here
+              to help you navigate through and find a solution.
+            </p>
+            <p>
+              Selling your home for cash can often be a more practical choice
+              than relisting. With a cash sale, you bypass the uncertainties of
+              the real estate market. We purchase your home directly from you,
+              saving you the hassle of repairs and financial burdens associated
+              with traditional sales. While the sale price may be lower than
+              your market asking price, the benefits are substantial: no repairs
+              needed, foreclosure and mortgage payments halted, no fees, and a
+              fast sale, typically within a week.
+            </p>
+            <!-- blockquote -->
+            <blockquote>
+              Release the burden of an expired listing and unlock the door to
+              financial freedom with a swift cash sale. Take control of your
+              future today with Expand Estates.
+            </blockquote>
+            <p>
+              At Expand Estates, we're committed to simplifying the cash sale
+              process and providing exceptional customer service. We believe in
+              transparency and ensure you understand all your options. If your
+              listing has expired and you're ready to sell your house for cash,
+              contact us today to begin the process. We buy houses for cash in
+              various neighborhoods, including Plaza Midwood, Villa Heights,
+              Belmont, Wesley Heights, Dilworth, Sedgefield, Madison Park, NoDa,
+              Myers Park, and more. Don't let an expired listing hold you back
+              any longer—reach out to Expand Estates and take the first step
+              towards financial freedom.
+            </p>
+            <!-- post share -->
+            <ul class="post-content-share list-inline mb-5">
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="/index.html">
+                  <i class="EE-ion-social-skype"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <aside class="sidebar pl-0 pl-lg-4">
+          <div class="widget-post widget lastest-post-container">
+            <div id="EE-widget-sidebar"></div>
+            <div id="EE-post-container"></div>
+
+            <script>
+              $(function () {
+                const postContentData = [
+                  {
+                    cardId: 1,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2019",
+                    newImgSrc: "../images/why-sell/post-1.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  {
+                    cardId: 2,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2018",
+                    newImgSrc: "../images/why-sell/post-2.jpg",
+                    newHrefSrc: "../pages/unwanted-homes.html",
+                  },
+                  // Add more FAQ card data as needed
+                ];
+                postContentData.forEach((contentData) => {
+                  generatePostContent(
+                    contentData.cardId,
+                    contentData.postTitle,
+                    contentData.postDate,
+                    contentData.newImgSrc,
+                    contentData.newHrefSrc
+                  );
+                });
+              });
+            </script>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('blocks/call-to-action-2.htm')
+@@include('blocks/to-contact-button.htm') @@include('blocks/footer.htm')
+@@include('footer.htm')
