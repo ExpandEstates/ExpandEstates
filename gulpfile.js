@@ -18,7 +18,9 @@ const fs = require("fs");
 
 var app = express();
 var server = http.Server(app);
-var port = 500;
+var port = 3000;
+
+console.log("Reached Gulpfile.js");
 app.use(express.static("./theme/"));
 
 app.set("port", port);
@@ -98,6 +100,7 @@ app.post("/send_email", function (req, res) {
   // });
 });
 
+console.log("Starting Port");
 server.listen(port, function () {
   console.log("Starting Server on port: " + port);
 });
