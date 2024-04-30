@@ -1,0 +1,25 @@
+$color_1: #fff;
+
+.to-contact-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28abe3;
+  border: 1px solid #28abe3;
+  color: $color_1;
+  display: none;
+  position: fixed;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  cursor: pointer;
+  z-index: 9999;
+  &:hover {
+    color: $color_1;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}

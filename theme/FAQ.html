@@ -48,6 +48,8 @@
     <link rel="stylesheet" href="plugins/slick/slick.css" />
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="js/EEscript.js"></script>
   </head>
   <body id="body">
     <!--
@@ -190,7 +192,113 @@ End Fixed Navigation
 		</div>
 	</div>
 </section>
-<footer id="footer" class="bg-one">
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="row justify-content-center">
+      <!-- section title -->
+      <div class="col-xl-6 col-lg-8">
+        <div class="title text-center">
+          <h2>FAQ</h2>
+          <p>Frequently Asked Questions!</p>
+          <div class="border"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="accordion accordion-group" id="our-values-accordion">
+          <div id="EE-faq-cards-container"></div>
+          <script>
+            $(function () {
+              const faqCardsData = [
+                { cardId: 1, question: "Hey", answer: "hi" },
+                { cardId: 2, question: "Hello", answer: "asdfa" },
+                { cardId: 3, question: "adsfa", answer: "asdf" },
+                { cardId: 4, question: "Hey", answer: "hi" },
+                { cardId: 5, question: "Hello", answer: "asdfa" },
+                { cardId: 6, question: "adsfa", answer: "asdf" },
+                { cardId: 7, question: "Hey", answer: "hi" },
+                { cardId: 8, question: "Hello", answer: "asdfa" },
+                { cardId: 9, question: "adsfa", answer: "asdf" },
+                { cardId: 10, question: "Hey", answer: "hi" },
+                { cardId: 11, question: "Hello", answer: "asdfa" },
+                { cardId: 12, question: "adsfa", answer: "asdf" },
+                // Add more FAQ card data as needed
+              ];
+
+              faqCardsData.forEach((cardData) => {
+                generateFAQCard(cardData);
+              });
+            });
+
+            function generateFAQCard(data) {
+              const { cardId, question, answer } = data;
+
+              // Create div element for FAQ card
+              const cardDiv = `<div id="EE-faq-card-${cardId}"></div>`;
+              $("#EE-faq-cards-container").append(cardDiv);
+
+              // Create script element for executing JavaScript
+              const script = document.createElement("script");
+              script.textContent = `
+                    $(function () {
+                      manipulateFAQCard("${cardId}","${question}", "${answer}");
+                    });
+                  `;
+              document.body.appendChild(script);
+            }
+          </script>
+        </div>
+        <!--/ Accordion end -->
+      </div>
+      <div class="col-lg-4 mt-5 mt-lg-0">
+        <!-- sidebar -->
+        <aside class="sidebar pl-0 pl-lg-4">
+          <div class="widget-post widget lastest-post-container">
+            <div id="EE-widget-sidebar"></div>
+            <div id="EE-post-container"></div>
+
+            <script>
+              $(function () {
+                const postContentData = [
+                  {
+                    cardId: 1,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2019",
+                    newImgSrc: "images/about/member.jpg",
+                    newHrefSrc: "./pages/unwanted-homes.html",
+                  },
+                  {
+                    cardId: 2,
+                    postTitle: "Condentum Quam Vitae Ligu. tempor bibendum.",
+                    postDate: "Aug 20, 2018",
+                    newImgSrc: "images/about/member.jpg",
+                    newHrefSrc: "./pages/unwanted-homes.html",
+                  },
+                  // Add more FAQ card data as needed
+                ];
+                postContentData.forEach((contentData) => {
+                  generatePostContent(
+                    contentData.cardId,
+                    contentData.postTitle,
+                    contentData.postDate,
+                    contentData.newImgSrc,
+                    contentData.newHrefSrc
+                  );
+                });
+              });
+            </script>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+<a class="btn to-contact-btn" href="contact.html">Contact Us </a>
+ <footer id="footer" class="bg-one">
   <div class="top-footer">
     <div class="container">
       <div class="row justify-content-around">
@@ -250,7 +358,8 @@ End Fixed Navigation
 
 
 <!-- end Footer Area
-========================================== --> <!-- 
+========================================== -->
+<!-- 
     Essential Scripts
     =====================================-->
 <!-- Main jQuery -->

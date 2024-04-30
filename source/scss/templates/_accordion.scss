@@ -1,0 +1,66 @@
+$color_1: black;
+$color_2: #fff;
+$color_3: #28abe3;
+$font-family_1: "themefisher-font";
+$background-color_1: #333;
+$background-color_2: #28abe3;
+
+/*============================================================
+	Accordion
+==============================================================*/
+.accordion-group {
+  .card {
+    border-radius: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dfdfdf !important;
+  }
+  .card-body {
+    padding: 15px 20px;
+    img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+  }
+  .card-header {
+    .btn {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 13px 15px;
+      padding-bottom: 10px;
+      color: $color_1;
+      &:before {
+        font-family: $font-family_1;
+        position: absolute;
+        z-index: 0;
+        font-size: 14px;
+        right: 16px;
+        padding: 3px 8px 1px;
+        text-align: center;
+        border-radius: 3px;
+        top: 12px;
+        content: "\f489";
+        font-weight: 700;
+        background-color: $background-color_1;
+        color: $color_2;
+        transition: 0.3s;
+      }
+    }
+    .btn[aria-expanded="true"] {
+      color: $color_3;
+      &::before {
+        content: "\f462";
+        background-color: $background-color_2;
+      }
+    }
+  }
+}
+.accordion-group.accordion-classic {
+  .card-header {
+    .btn {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

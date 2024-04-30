@@ -2177,4 +2177,78 @@ a:focus, a:hover {
     padding: 10px 15px;
   }
 }
+/*============================================================
+	Accordion
+==============================================================*/
+.accordion-group .card {
+  border-radius: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf !important;
+}
+.accordion-group .card-body {
+  padding: 15px 20px;
+}
+.accordion-group .card-body img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+.accordion-group .card-header .btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 13px 15px;
+  padding-bottom: 10px;
+  color: black;
+}
+.accordion-group .card-header .btn:before {
+  font-family: "themefisher-font";
+  position: absolute;
+  z-index: 0;
+  font-size: 14px;
+  right: 16px;
+  padding: 3px 8px 1px;
+  text-align: center;
+  border-radius: 3px;
+  top: 12px;
+  content: "\f489";
+  font-weight: 700;
+  background-color: #333;
+  color: #fff;
+  transition: 0.3s;
+}
+.accordion-group .card-header .btn[aria-expanded=true] {
+  color: #28abe3;
+}
+.accordion-group .card-header .btn[aria-expanded=true]::before {
+  content: "\f462";
+  background-color: #28abe3;
+}
+
+.accordion-group.accordion-classic .card-header .btn:before {
+  display: none;
+}
+
+.to-contact-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28abe3;
+  border: 1px solid #28abe3;
+  color: #fff;
+  display: none;
+  position: fixed;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.to-contact-btn:hover {
+  color: #fff;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 /*# sourceMappingURL=style.css.map */
