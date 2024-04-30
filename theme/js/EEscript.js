@@ -18,7 +18,7 @@
     $("#EE-widget-sidebar").load(
       window.location.hostname === "expandestates.github.io"
         ? "/ExpandEstates/main/templates/EE-widget-sidebar.html"
-        : "templates/EE-widget-sidebar.html"
+        : "/templates/EE-widget-sidebar.html"
     );
   });
   $(function () {
@@ -38,7 +38,7 @@
     $("#EE-page-header").load(
       window.location.hostname === "expandestates.github.io"
         ? "/ExpandEstates/main/templates/EE-page-header.html"
-        : "templates/EE-page-header.html",
+        : "/templates/EE-page-header.html",
       function (responseTxt, statusTxt, xhr) {
         var ref = $(this);
         ref.find("#" + pageHeader).text(pageHeaderText);
@@ -105,7 +105,7 @@
     $("#EE-widget-post-content-" + cardId).load(
       window.location.hostname === "expandestates.github.io"
         ? "/ExpandEstates/main/templates/EE-widget-post-content.html"
-        : "templates/EE-widget-post-content.html",
+        : "/templates/EE-widget-post-content.html",
       function (responseTxt, statusTxt, xhr) {
         var faqCard = $(this);
         faqCard.find("img").attr("src", newImgSrc);

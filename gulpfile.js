@@ -20,12 +20,37 @@ var path = {
     scss: "source/scss/**/*.scss",
     images: "source/images/**/*.+(png|jpg|gif|svg)",
     templates: "source/templates/",
+    pages: "source/pages/",
   },
   build: {
     dirBuild: "theme/",
     dirDev: "theme/",
   },
 };
+
+gulp.task("pages:build", function () {
+  return gulp
+    .src(path.src.pages + "*.html")
+    .pipe(
+      fileinclude({
+        basepath: path.src.pages,
+      })
+    )
+    .pipe(
+      comments(`
+    WEBSITE: https://themefisher.com
+    TWITTER: https://twitter.com/themefisher
+    FACEBOOK: https://www.facebook.com/themefisher
+    GITHUB: https://github.com/themefisher/
+    `)
+    )
+    .pipe(gulp.dest(path.build.dirDev + "pages/"))
+    .pipe(
+      bs.reload({
+        stream: true,
+      })
+    );
+});
 
 gulp.task("templates:build", function () {
   return gulp
@@ -167,6 +192,7 @@ gulp.task("watch:build", function () {
   gulp.watch(path.src.images, gulp.series("images:build"));
   gulp.watch(path.src.plugins, gulp.series("plugins:build"));
   gulp.watch(path.src.templates, gulp.series("templates:build"));
+  gulp.watch(path.src.pages, gulp.series("pages:build"));
 });
 
 // Dev Task
@@ -181,6 +207,7 @@ gulp.task(
     "plugins:build",
     "others:build",
     "templates:build",
+    "pages:build",
     gulp.parallel("watch:build", function () {
       bs.init({
         server: {
